@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masjid Raya Talago</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --hijau: #1a6b3a;
+      --hijau-muda: #2e9b58;
+      --emas: #c9a84c;
+      --emas-muda: #f0d080;
+      --krem: #fdf8f0;
+      --gelap: #0f2318;
+      --abu: #6c757d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: var(--krem);
+      color: var(--gelap);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: rgba(15, 35, 24, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--emas);
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--emas) !important;
+      letter-spacing: 1px;
+    }
+    .navbar-nav .nav-link {
+      color: #e8e8e8 !important;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .navbar-nav .nav-link:hover {
+      color: var(--emas) !important;
+    }
+    .navbar-toggler {
+      border-color: var(--emas);
+    }
+    .navbar-toggler-icon {
+      filter: brightness(10) sepia(1) hue-rotate(20deg);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #0f2318 0%, #1a6b3a 55%, #0e4025 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero {
+    background: url('bg1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    /* Geometric ornament */
+    .hero-ornament {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      border: 2px solid rgba(201,168,76,0.15);
+      box-shadow: 0 0 0 40px rgba(201,168,76,0.05), 0 0 0 80px rgba(201,168,76,0.03);
+    }
+    .hero-ornament::after {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--emas-muda);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: #fff;
+      line-height: 1.15;
+    }
+    .hero h1 span { color: var(--emas); }
+    .hero p.lead {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      font-weight: 300;
+      max-width: 520px;
+    }
+    .btn-emas {
+      background: linear-gradient(135deg, var(--emas), #a07830);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      transition: all 0.25s;
+    }
+    .btn-emas:hover {
+      background: linear-gradient(135deg, var(--emas-muda), var(--emas));
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201,168,76,0.35);
+    }
+    .btn-outline-emas {
+      border: 2px solid var(--emas);
+      color: var(--emas);
+      background: transparent;
+      padding: 11px 28px;
+      font-weight: 700;
+      border-radius: 4px;
+      transition: all 0.25s;
+    }
+    .btn-outline-emas:hover {
+      background: var(--emas);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      background: var(--gelap);
+      border-top: 3px solid var(--emas);
+      border-bottom: 3px solid var(--emas);
+    }
+    .stat-item {
+      padding: 24px 16px;
+      text-align: center;
+      border-right: 1px solid rgba(201,168,76,0.2);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--emas);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-tag {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--hijau-muda);
+      font-weight: 700;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--gelap);
+    }
+    .divider-emas {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--emas), var(--emas-muda));
+      border-radius: 2px;
+    }
+
+    /* ===== PROFILE SECTION ===== */
+    .profile-section { background: #fff; }
+    .mosque-img-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15,35,24,0.18);
+    }
+    .mosque-img-wrap img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+    .mosque-img-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(15,35,24,0.88);
+      border: 1px solid var(--emas);
+      color: var(--emas);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    /* SVG Masjid placeholder */
+    .mosque-img-wrap img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:12px;
+}
+    .info-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(15,35,24,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .info-list li:last-child { border-bottom: none; }
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(26,107,58,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--hijau);
+      flex-shrink: 0;
+    }
+    .info-text strong { display: block; font-size: 0.8rem; color: var(--abu); text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-text span { font-size: 0.97rem; color: var(--gelap); }
+
+    /* ===== JADWAL SHOLAT ===== */
+    .jadwal-section {
+      background: linear-gradient(135deg, #0f2318 0%, #1a4a2a 100%);
+    }
+    .jadwal-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .jadwal-card:hover, .jadwal-card.active-sholat {
+      background: rgba(201,168,76,0.12);
+      border-color: var(--emas);
+      transform: translateY(-4px);
+    }
+    .jadwal-card.active-sholat .sholat-waktu { color: var(--emas); }
+    .sholat-icon { font-size: 2rem; margin-bottom: 8px; }
+    .sholat-nama { font-size: 0.9rem; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; }
+    .sholat-waktu { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: #fff; font-weight: 700; }
+    #jam-sekarang { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--emas); font-weight: 800; }
+
+    /* ===== KEGIATAN ===== */
+    .kegiatan-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(15,35,24,0.1);
+    transition: all 0.3s;
+    background: #fff;
+}
+
+/* Pengajian */
+/* Tulisan pada kartu Pengajian */
+.bg-pengajian h5,
+.bg-pengajian p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Badge jadwal */
+.bg-pengajian .badge,
+.bg-pengajian .badge-jadwal {
+    background: rgba(255,255,255,0.95) !important;
+    color: #8a6200 !important;
+}
+.bg-pengajian {
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("pengajian.JPG");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* TPA */
+/* TPA */
+.bg-tpa h5,
+.bg-tpa p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+.bg-tpa .badge,
+.bg-tpa .badge-jadwal {
+    background: rgba(255,255,255,0.95) !important;
+    color: #8a6200 !important;
+}
+
+.bg-tpa {
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("tpa.JPG");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-tpa {
+    background: url("tpa.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Sholat Jumat */
+.bg-jumat {
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("jumat.JPG");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Tulisan kartu Sholat Jumat */
+.bg-jumat h5,
+.bg-jumat p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Badge jadwal */
+.bg-jumat .badge,
+.bg-jumat .badge-jadwal {
+    background: rgba(255,255,255,0.95) !important;
+    color: #8a6200 !important;
+}
+
+/* DDS */
+/* DDS */
+.bg-dds {
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("dds.JPG");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Tulisan DDS */
+.bg-dds h5,
+.bg-dds p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Badge jadwal DDS */
+.bg-dds .badge,
+.bg-dds .badge-jadwal {
+    background: rgba(255,255,255,0.95) !important;
+    color: #8a6200 !important;
+}
+
+/* Lomba */
+/* Lomba Islami */
+.bg-lomba {
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("lomba.JPG");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Tulisan Lomba Islami */
+.bg-lomba h5,
+.bg-lomba p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Badge jadwal */
+.bg-lomba .badge,
+.bg-lomba .badge-jadwal {
+    background: rgba(255,255,255,0.95) !important;
+    color: #8a6200 !important;
+}
+
+/* Sensus */
+/* SENSUS */
+.bg-sensus {
+    background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("sensus.JPG");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Tulisan SENSUS */
+.bg-sensus h5,
+.bg-sensus p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+}
+
+/* Badge jadwal */
+.bg-sensus .badge,
+.bg-sensus .badge-jadwal {
+    background: rgba(255,255,255,0.95) !important;
+    color: #8a6200 !important;
+}
+    .kegiatan-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(15,35,24,0.15); }
+    .kegiatan-header {
+      height: 8px;
+      background: linear-gradient(90deg, var(--hijau), var(--emas));
+    }
+    .kegiatan-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(26,107,58,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--hijau);
+      margin-bottom: 16px;
+    }
+    .badge-jadwal {
+      background: rgba(201,168,76,0.15);
+      color: #7a5a10;
+      font-size: 0.78rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(201,168,76,0.3);
+      font-weight: 600;
+    }
+
+    /* ===== GALERI ===== */
+.galeri-section {
+  background: #f4f8f5;
+}
+
+.galeri-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.galeri-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.galeri-item:hover img {
+  transform: scale(1.05);
+}
+
+.galeri-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 35, 24, 0.7) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.galeri-item:hover .galeri-overlay {
+  opacity: 1;
+}
+
+.galeri-overlay span {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+    /* ===== SOSIAL MEDIA ===== */
+    .sosmed-section { background: #fff; }
+    .sosmed-card {
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-decoration: none;
+      display: block;
+    }
+    .sosmed-card:hover { transform: translateY(-8px); }
+    .sosmed-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px;
+      transition: transform 0.2s;
+    }
+    .sosmed-card:hover .sosmed-icon { transform: scale(1.1) rotate(-5deg); }
+
+    /* Instagram */
+    .card-ig { background: linear-gradient(135deg, #fef9f4, #fff0f5); border-color: #e1a0b0; }
+    .card-ig:hover { border-color: #e1306c; box-shadow: 0 20px 50px rgba(225,48,108,0.15); }
+    .icon-ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+
+    /* TikTok */
+    .card-tt { background: linear-gradient(135deg, #f4fffe, #f0f0ff); border-color: #a0c8d0; }
+    .card-tt:hover { border-color: #010101; box-shadow: 0 20px 50px rgba(1,1,1,0.12); }
+    .icon-tt { background: #010101; color: #fff; position: relative; overflow: hidden; }
+
+    /* YouTube */
+    .card-yt { background: linear-gradient(135deg, #fff5f5, #fff0f0); border-color: #f0a0a0; }
+    .card-yt:hover { border-color: #ff0000; box-shadow: 0 20px 50px rgba(255,0,0,0.12); }
+    .icon-yt { background: #ff0000; color: #fff; }
+
+    /* Facebook */
+    .card-fb { background: linear-gradient(135deg, #f4f6ff, #eef2ff); border-color: #a0b0e8; }
+    .card-fb:hover { border-color: #1877f2; box-shadow: 0 20px 50px rgba(24,119,242,0.15); }
+    .icon-fb { background: #1877f2; color: #fff; }
+
+    /* WhatsApp */
+    .card-wa { background: linear-gradient(135deg, #f2fff5, #e8fef0); border-color: #a0d8b0; }
+    .card-wa:hover { border-color: #25d366; box-shadow: 0 20px 50px rgba(37,211,102,0.15); }
+    .icon-wa { background: #25d366; color: #fff; }
+
+    /* Website */
+    .card-web { background: linear-gradient(135deg, #f8f5ff, #f0f4ff); border-color: #c0b0e8; }
+    .card-web:hover { border-color: var(--hijau); box-shadow: 0 20px 50px rgba(26,107,58,0.15); }
+    .icon-web { background: var(--hijau); color: #fff; }
+
+    .sosmed-handle { font-weight: 700; font-size: 1.05rem; color: var(--gelap); margin-bottom: 4px; }
+    .sosmed-desc { font-size: 0.85rem; color: var(--abu); }
+    .sosmed-followers {
+      display: inline-block;
+      margin-top: 10px;
+      background: rgba(26,107,58,0.1);
+      color: var(--hijau);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ===== KONTAK ===== */
+    .kontak-section {
+      background: linear-gradient(135deg, #0f2318 0%, #1e5030 100%);
+    }
+    .kontak-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      height: 100%;
+    }
+    .kontak-card .bi {
+      font-size: 2.2rem;
+      color: var(--emas);
+      margin-bottom: 12px;
+    }
+    .kontak-card h6 { color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .kontak-card p { color: #fff; font-size: 0.97rem; margin: 0; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #050f09;
+      border-top: 3px solid var(--emas);
+    }
+    .footer-brand { font-family: 'Playfair Display', serif; color: var(--emas); font-size: 1.5rem; }
+    .footer a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer a:hover { color: var(--emas); }
+    .footer-divider { border-color: rgba(255,255,255,0.1); }
+    .footer-copy { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+
+    /* ===== SCROLL TO TOP ===== */
+    #scrollTop {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 46px;
+      height: 46px;
+      background: var(--emas);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+      transition: all 0.2s;
+    }
+    #scrollTop:hover { background: #a07830; transform: translateY(-3px); }
+
+    /* ===== UTILITIES ===== */
+    .text-emas { color: var(--emas) !important; }
+    .bg-hijau { background-color: var(--hijau) !important; }
+    section { padding: 80px 0; }
+    @media (max-width: 768px) {
+      section { padding: 56px 0; }
+      .hero { min-height: auto; padding: 120px 0 80px; }
+      .hero-ornament { display: none; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <i class="bi bi-moon-stars-fill text-warning"></i>
+      Masjid Raya Talago
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal Sholat</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kegiatan">Kegiatan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sosmed">Sosial Media</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="beranda">
+  <div class="hero-ornament"></div>
+  <div class="container position-relative" style="z-index:2">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <span class="hero-badge"><i class="bi bi-moon-stars me-1"></i> Jorong Talago, Sumatera Barat</span>
+        <h1 class="mb-3">Masjid Raya <span>Talago</span></h1>
+        <p class="lead mb-4">
+          Pusat ibadah, pendidikan, dan kegiatan sosial masyarakat Jorong Talago.
+          Berdiri kokoh sebagai simbol keimanan dan persatuan umat.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#jadwal" class="btn btn-emas"><i class="bi bi-clock me-2"></i>Jadwal Sholat</a>
+          <a href="#kegiatan" class="btn btn-outline-emas text-white"><i class="bi bi-calendar3 me-2"></i>Kegiatan</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">1967</div>
+          <div class="stat-label">Tahun Berdiri</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">300</div>
+          <div class="stat-label">Kapasitas Jamaah</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Program Kegiatan</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <div class="stat-number">5 ☆</div>
+          <div class="stat-label">Masjid Percontohan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROFIL ===== -->
+<section class="profile-section" id="profil">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="mosque-img-wrap">
+         <img src="masjid8.jpg" alt="Masjid Raya Talago">
+
+<div class="mosque-img-badge">
+    <i class="bi bi-geo-alt-fill me-1"></i>Jorong Talago, Sumatera Barat
+</div>
+          <div class="mosque-img-badge"><i class="bi bi-geo-alt-fill me-1"></i>Jorong Talago, Sumatera Barat</div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p class="section-tag">Tentang Kami</p>
+        <h2 class="section-title mb-3">Profil Masjid <span class="text-emas">Raya Talago</span></h2>
+        <div class="divider-emas mb-4"></div>
+        <p class="text-muted mb-4" style="line-height:1.8">
+          Masjid Raya Talago adalah masjid kebanggaan masyarakat Jorong Talago yang berdiri sejak tahun 1967. 
+          Sebagai pusat kegiatan keagamaan, sosial, dan pendidikan, masjid ini terus berkembang melayani ribuan jamaah 
+          dan menjadi simbol persatuan umat Islam di Kabupaten Agam malalak selatan.
+        </p>
+        <ul class="info-list list-unstyled">
+          <li>
+            <div class="info-icon"><i class="bi bi-building"></i></div>
+            <div class="info-text"><strong>Nama Resmi</strong><span>Masjid Raya Talago</span></div>
+          </li>
+          <li>
+            <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+            <div class="info-text"><strong>Alamat</strong><span>Jorong talago,Malalak Selatan., Kecamatan. Malalak, Kabupaten Agam, Sumatera Barat 26161</span></div>
+          </li>
+          <li>
+            <div class="info-icon"><i class="bi bi-calendar-check"></i></div>
+            <div class="info-text"><strong>Tahun Berdiri</strong><span>1837 (Renovasi besar terakhir: 2015)</span></div>
+          </li>
+          <li>
+            <div class="info-icon"><i class="bi bi-people"></i></div>
+            <div class="info-text"><strong>Kapasitas</strong><span>±300 Jamaah</span></div>
+          </li>
+          <li>
+            <div class="info-icon"><i class="bi bi-person-badge"></i></div>
+            <div class="info-text"><strong>Ketua BKM</strong><span>H. Ahmad Fauzi, S.Ag</span></div>
+          </li>
+          <li>
+            <div class="info-icon"><i class="bi bi-telephone"></i></div>
+            <div class="info-text"><strong>Kontak</strong><span>+62 812-3456-7890</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JADWAL SHOLAT ===== -->
+<section class="jadwal-section" id="jadwal">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-tag" style="color: var(--emas-muda)">Waktu Ibadah</p>
+      <h2 class="section-title text-white mb-2">Jadwal Sholat Hari Ini</h2>
+      <div class="divider-emas mx-auto mb-3"></div>
+      <div id="tanggal-hari" class="text-white-50 mb-2" style="font-size:1rem"></div>
+      <div id="jam-sekarang">00:00:00</div>
+    </div>
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="jadwal-card" id="card-subuh">
+          <div class="sholat-icon">🌙</div>
+          <div class="sholat-nama">Subuh</div>
+          <div class="sholat-waktu">04:58</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="jadwal-card" id="card-dzuhur">
+          <div class="sholat-icon">☀️</div>
+          <div class="sholat-nama">Dzuhur</div>
+          <div class="sholat-waktu">12:18</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="jadwal-card" id="card-ashar">
+          <div class="sholat-icon">🌤️</div>
+          <div class="sholat-nama">Ashar</div>
+          <div class="sholat-waktu">15:35</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="jadwal-card" id="card-maghrib">
+          <div class="sholat-icon">🌅</div>
+          <div class="sholat-nama">Maghrib</div>
+          <div class="sholat-waktu">18:20</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="jadwal-card" id="card-isya">
+          <div class="sholat-icon">🌃</div>
+          <div class="sholat-nama">Isya</div>
+          <div class="sholat-waktu">19:32</div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-4" style="color: rgba(255,255,255,0.4); font-size:0.85rem">
+      <i class="bi bi-info-circle me-1"></i>Jadwal berdasarkan lokasi Jorong Talago, Kab. Agam Malalak selatan
+    </p>
+  </div>
+</section>
+
+<!-- ===== KEGIATAN ===== -->
+<section id="kegiatan" style="background: var(--krem)">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-tag">Program Rutin</p>
+      <h2 class="section-title mb-2">Kegiatan Masjid Musholla Talago</h2>
+      <div class="divider-emas mx-auto mb-3"></div>
+      <p class="text-muted" style="max-width:520px; margin:0 auto">
+        Berbagai program keagamaan, pendidikan, dan sosial untuk mempererat ukhuwah islamiyah.
+      </p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="kegiatan-card bg-pengajian">
+          <div class="kegiatan-header"></div>
+          <div class="card-body p-4">
+            <div class="kegiatan-icon-wrap">📖</div>
+            <h5 class="fw-bold mb-2">Pengajian Rutin</h5>
+            <p class="text-muted small mb-3">Kajian Al-Qur'an dan hadis bersama ustaz terpilih. Terbuka untuk seluruh jamaah pria dan wanita.</p>
+            <span class="badge-jadwal"><i class="bi bi-calendar3 me-1"></i>Senin-Selasa-Jumat-Sabtu, 19:00 WIB</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="kegiatan-card bg-tpa">
+          <div class="kegiatan-header"></div>
+          <div class="card-body p-4">
+            <div class="kegiatan-icon-wrap">🎓</div>
+            <h5 class="fw-bold mb-2">TPA / TPQ</h5>
+            <p class="text-muted small mb-3">Taman Pendidikan Al-Qur'an untuk anak-anak usia 5–15 tahun. Belajar iqra', tahsin, dan hafalan.</p>
+            <span class="badge-jadwal"><i class="bi bi-calendar3 me-1"></i>Senin–Sabtu, 15:30 WIB</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+       <div class="kegiatan-card bg-jumat">
+          <div class="kegiatan-header"></div>
+          <div class="card-body p-4">
+            <div class="kegiatan-icon-wrap">🕌</div>
+            <h5 class="fw-bold mb-2">Sholat Jumat Berjamaah</h5>
+            <p class="text-mute d small mb-3">Pelaksanaan sholat Jumat dengan khotib bergantian dari ulama lokal dan tamu.</p>
+            <span class="badge-jadwal"><i class="bi bi-calendar3 me-1"></i>Setiap Jumat, 12:00 WIB</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+  <div class="kegiatan-card bg-dds">
+    <div class="kegiatan-header"></div>
+    <div class="card-body p-4">
+      <div class="kegiatan-icon-wrap">📖</div>
+      <h5 class="fw-bold mb-2">DDS (Didikan Subuh)</h5>
+      <p class="text-muted small mb-3">
+        Kegiatan pembinaan keislaman bagi anak-anak dan remaja melalui hafalan surat pendek, doa sehari-hari, kultum, serta praktik ibadah.
+      </p>
+      <span class="badge-jadwal">
+        <i class="bi bi-calendar3 me-1"></i>Setiap Minggu, 05:30 WIB
+      </span>
+    </div>
+  </div>
+</div>
+      <div class="col-md-6 col-lg-4">
+       <div class="kegiatan-card bg-lomba">
+          <div class="kegiatan-header"></div>
+          <div class="card-body p-4">
+            <div class="kegiatan-icon-wrap">🏆</div>
+            <h5 class="fw-bold mb-2">Lomba Islami</h5>
+            <p class="text-muted small mb-3">lomba adzan, dan Surat" pendek untuk anak anak Tpa/Tpq .</p>
+            <span class="badge-jadwal"><i class="bi bi-calendar3 me-1"></i>Tahunan</span>
+          </div>
+        </div>  
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="kegiatan-card bg-sensus">
+          <div class="kegiatan-header"></div>
+          <div class="card-body p-4">
+            <div class="kegiatan-icon-wrap">🌙</div>
+            <h5 class="fw-bold mb-2">SENSUS</h5>
+            <p class="text-muted small mb-3">Pendataan Penduduk Jorong Talago Nagari Malalak Selatan.</p>
+            <span class="badge-jadwal"><i class="bi bi-calendar3 me-1"></i>15-30 Juni</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERI ===== -->
+<section class="galeri-section py-5" id="galeri">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <p class="section-tag">Dokumentasi</p>
+      <h2 class="section-title">Galeri Foto</h2>
+      <div class="divider-emas mx-auto mb-3"></div>
+      <p class="text-muted">
+        Momen-momen berharga kegiatan Masjid Raya Talago
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid1.JPG" target="_blank">
+      <img src="masjid1.JPG" class="img-fluid galeri-img" alt="Foto 1">
+    </a>
+  </div>
+</div>
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid2.JPG" target="_blank">
+      <img src="masjid2.JPG" class="img-fluid galeri-img" alt="Foto 2">
+    </a>
+  </div>
+</div>
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid3.JPG" target="_blank">
+      <img src="masjid3.JPG" class="img-fluid galeri-img" alt="Foto 2">
+    </a>
+  </div>
+</div>
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid4.JPG" target="_blank">
+      <img src="masjid4.JPG" class="img-fluid galeri-img" alt="Foto 2">
+    </a>
+  </div>
+</div>
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid5.JPG" target="_blank">
+      <img src="masjid5.JPG" class="img-fluid galeri-img" alt="Foto 2">
+    </a>
+  </div>
+</div>
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid6.JPG" target="_blank">
+      <img src="masjid6.JPG" class="img-fluid galeri-img" alt="Foto 2">
+    </a>
+  </div>
+</div>
+
+      <div class="col-md-4">
+  <div class="galeri-item">
+    <a href="masjid7.JPG" target="_blank">
+      <img src="masjid7.JPG" class="img-fluid galeri-img" alt="Foto 2">
+    </a>
+  </div>
+</div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SOSIAL MEDIA ===== -->
+<section class="sosmed-section" id="sosmed">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-tag">Ikuti Kami</p>
+      <h2 class="section-title mb-2">Media Sosial & Informasi</h2>
+      <div class="divider-emas mx-auto mb-3"></div>
+      <p class="text-muted" style="max-width: 500px; margin: 0 auto">
+        Dapatkan informasi terbaru, jadwal kegiatan, dan konten islami melalui platform digital kami.
+      </p>
+    </div>
+    <div class="row g-4">
+      <!-- Instagram -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="https://www.instagram.com/nchbm_masjidmushola_talago/" target="_blank" class="sosmed-card card-ig">
+          <div class="sosmed-icon icon-ig"><i class="bi bi-instagram"></i></div>
+          <div class="sosmed-handle">@masjidrayatalago</div>
+          <div class="sosmed-desc">Foto kegiatan, info pengajian, dan momen islami</div>
+          <div><span class="sosmed-followers">📸 Instagram</span></div>
+        </a>
+      </div>
+      <!-- TikTok -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="https://www.tiktok.com/@mesjid.raya.talag" target="_blank" class="sosmed-card card-tt">
+          <div class="sosmed-icon icon-tt">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.14 8.14 0 0 0 4.77 1.52V6.76a4.85 4.85 0 0 1-1-.07z"/></svg>
+          </div>
+          <div class="sosmed-handle">@masjidrayatalago</div>
+          <div class="sosmed-desc">Video ceramah, tausiyah singkat & konten dakwah</div>
+          <div><span class="sosmed-followers">🎵 TikTok</span></div>
+        </a>
+      </div>
+      <!-- YouTube -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="https://youtube.com/@mesjidrayatalago?si=K-JI70LuO6RatIDc" target="_blank" class="sosmed-card card-yt">
+          <div class="sosmed-icon icon-yt"><i class="bi bi-youtube"></i></div>
+          <div class="sosmed-handle">Masjid Raya Talago</div>
+          <div class="sosmed-desc">Live streaming sholat Jumat, khutbah & ceramah</div>
+          <div><span class="sosmed-followers">▶️ YouTube</span></div>
+        </a>
+      </div>
+      <!-- Facebook -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="https://www.facebook.com/share/1H1kfzhgJm/?mibextid=wwXIfr" target="_blank" class="sosmed-card card-fb">
+          <div class="sosmed-icon icon-fb"><i class="bi bi-facebook"></i></div>
+          <div class="sosmed-handle">Masjid Raya Talago</div>
+          <div class="sosmed-desc">Pengumuman resmi, info kegiatan & komunitas jamaah</div>
+          <div><span class="sosmed-followers">👍 Facebook</span></div>
+        </a>
+      </div>
+      <!-- WhatsApp -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="https://wa.me/6283820009451" target="_blank" class="sosmed-card card-wa">
+          <div class="sosmed-icon icon-wa"><i class="bi bi-whatsapp"></i></div>
+          <div class="sosmed-handle">+62 83820009451</div>
+          <div class="sosmed-desc">Hubungi pengurus langsung via WhatsApp untuk info</div>
+          <div><span class="sosmed-followers">💬 WhatsApp</span></div>
+        </a>
+      </div>
+      <!-- Website -->
+      <div class="col-sm-6 col-lg-4">
+        <a href="#beranda" class="sosmed-card card-web">
+          <div class="sosmed-icon icon-web"><i class="bi bi-globe2"></i></div>
+          <div class="sosmed-handle">masjidrayatalago.id</div>
+          <div class="sosmed-desc">Website resmi dengan info lengkap jadwal & kegiatan</div>
+          <div><span class="sosmed-followers">🌐 Website Resmi</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAK ===== -->
+<section class="kontak-section" id="kontak">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-tag" style="color: var(--emas-muda)">Hubungi Kami</p>
+      <h2 class="section-title text-white mb-2">Informasi Kontak</h2>
+      <div class="divider-emas mx-auto"></div>
+    </div>
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3">
+        <div class="kontak-card">
+          <i class="bi bi-geo-alt-fill"></i>
+          <h6>Alamat</h6>
+          <p>Jorong talago,Malalak Selatan., Kecamatan. Malalak, Kabupaten Agam, Sumatera Barat 26161</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="kontak-card">
+          <i class="bi bi-telephone-fill"></i>
+          <h6>Telepon</h6>
+          <p>+62 83820009461<br>(Sekretariat)</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="kontak-card">
+          <i class="bi bi-envelope-fill"></i>
+          <h6>Email</h6>
+          <p>mrayatalago@gmail.com</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="kontak-card">
+          <i class="bi bi-clock-fill"></i>
+          <h6>Jam Operasional</h6>
+          <p>Setiap hari mengikuti waktu sholat 5 waktu</p>
+        </div>
+      </div>
+    </div>
+    <!-- Map placeholder -->
+    <div class="rounded-3 overflow-hidden" style="height: 300px; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); display:flex; align-items:center; justify-content:center">
+      <div class="text-center text-white-50">
+        <i class="bi bi-map" style="font-size:3rem; display:block; margin-bottom:12px; color: var(--emas)"></i>
+        <p class="mb-1" style="color:rgba(255,255,255,0.6); font-size:1rem">Jorong Talago, Kab. Agam</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=G7M6%2B35G,+Malalak+Sel.,+Kec.+Malalak,+Kabupaten+Agam,+Sumatera+Barat+26161" target="_blank" class="btn btn-sm btn-outline-emas text-warning mt-2 border-warning">
+          <i class="bi bi-box-arrow-up-right me-1"></i>Buka di Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer py-5">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3"><i class="bi bi-moon-stars-fill me-2"></i>Masjid Raya Talago</div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.9rem; line-height:1.8">
+          Pusat ibadah, pendidikan, dan kegiatan sosial masyarakat Jorong Talago. Bersama membangun umat yang berakhlak mulia.
+        </p>
+        <div class="d-flex gap-3 mt-3">
+         <a href="https://www.instagram.com/nchbm_masjidmushola_talago/" target="_blank">
+    📸 Instagram
+</a>
+</a>
+          <a href="https://www.tiktok.com/@mesjid.raya.talag" target="_blank">
+    🎵 TikTok
+</a>
+          <a href="https://youtube.com/@mesjidrayatalago?si=K-JI70LuO6RatIDc" target="_blank">
+    ▶️ YouTube
+</a>
+          <a href="https://www.facebook.com/share/1H1kfzhgJm/?mibextid=wwXIfr" target="_blank">
+    👍 Facebook
+</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="text-white mb-3" style="font-size:0.85rem; letter-spacing:1px; text-transform:uppercase">Menu</h6>
+        <ul class="list-unstyled" style="line-height:2">
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#jadwal">Jadwal Sholat</a></li>
+          <li><a href="#kegiatan">Kegiatan</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="text-white mb-3" style="font-size:0.85rem; letter-spacing:1px; text-transform:uppercase">Lainnya</h6>
+        <ul class="list-unstyled" style="line-height:2">
+          <li><a href="#sosmed">Sosial Media</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+          <li><a href="#">Donasi</a></li>
+          <li><a href="#">Infak & Sedekah</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="text-white mb-3" style="font-size:0.85rem; letter-spacing:1px; text-transform:uppercase">Info Rekening Infak</h6>
+        <div style="background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius:10px; padding:16px">
+          <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; margin:0; line-height:2">
+            <i class="bi bi-bank2 me-2 text-warning"></i>Bank Nagari<br>
+            <i class="bi bi-credit-card me-2 text-warning"></i>No. Rek: 05000210409246<br>
+            <i class="bi bi-person me-2 text-warning"></i>a.n. BKM Masjid Raya Talago
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="footer-copy mb-0">© 2025 Masjid Raya Talago. Semua hak dilindungi.</p>
+      <p class="footer-copy mb-0">Dibuat dengan ❤️ untuk jamaah Jorong Talago</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="bi bi-chevron-up"></i>
+</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Clock
+  function updateClock() {
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const s = String(now.getSeconds()).padStart(2,'0');
+    document.getElementById('jam-sekarang').textContent = h+':'+m+':'+s;
+
+    const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+    const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    document.getElementById('tanggal-hari').textContent =
+      days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+
+    // Highlight sholat aktif
+    const waktu = [
+      {id:'card-subuh', jam:4, menit:58},
+      {id:'card-dzuhur', jam:12, menit:18},
+      {id:'card-ashar', jam:15, menit:35},
+      {id:'card-maghrib', jam:18, menit:20},
+      {id:'card-isya', jam:19, menit:32},
+    ];
+    const totalMenit = now.getHours()*60 + now.getMinutes();
+    const aktif = waktu.reduce((prev, cur) => {
+      const tm = cur.jam*60 + cur.menit;
+      const tp = prev.jam*60 + prev.menit;
+      return (tm <= totalMenit && tm > tp) ? cur : prev;
+    });
+    waktu.forEach(w => {
+      const el = document.getElementById(w.id);
+      el.classList.remove('active-sholat');
+    });
+    if (totalMenit >= aktif.jam*60 + aktif.menit) {
+      document.getElementById(aktif.id).classList.add('active-sholat');
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Scroll to top button
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  });
+
+  // Smooth scroll for nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+        const navCollapse = document.getElementById('navMenu');
+        if (navCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navCollapse).hide();
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
